@@ -3,6 +3,14 @@ importFrom("graphics", "axis", "lines", "par", "points", "title")
 importFrom("stats", "cov", "dist", "median", "model.matrix", "optimize", "pbeta", "ppoints", "predict", "smooth.spline","var")
 export(geneticFormulation, asremlFormula, fillDesignSingle, simulator, 
        spl2D4, spl2Db, spl2Dmats, tpsmmbwrapper, bbasis,
-       printTable,replaceValues)
+       replaceValues)
+  importFrom("stats", "as.formula", "model.frame", "na.omit", "na.pass",
+             "rnorm", "terms.formula")
+  importFrom("utils", "head")
 
 
+###########
+## full imports
+###########
+  import("plyr")
+  import("sommer")

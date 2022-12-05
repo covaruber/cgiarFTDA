@@ -62,7 +62,6 @@ None
 
 \examples{
 
-library(cgiarBase)
 # fa model sample
 as.formula(geneticFormulation(mymodel=c("rr","sib","vm","ide"),noFa=c(2,1)))
 as.formula(geneticFormulation(mymodel=c("rr","prt","vm","ide"),noFa=c(2,1)))

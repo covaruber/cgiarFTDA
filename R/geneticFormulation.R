@@ -9,7 +9,7 @@ geneticFormulation <- function(mymodel,noFa=c(1,1),overlayColumnName="half", mat
   if(mymodel[3] %!in% c("vm","ped","na")){stop("Please provide one of the three models available; 'vm', 'ped', 'na' ",call. = FALSE)}
   if(mymodel[4] %!in% c("ide","na")){stop("Please provide one of the two models available; 'ide', 'na' ",call. = FALSE)}
   noFa <- as.character(noFa)
-  noFa <- cgiarBase::replaceValues(noFa, Search = c("0","NA"), Replace = c("",""))
+  noFa <- replaceValues(noFa, Search = c("0","NA"), Replace = c("",""))
   geneticFormulaVector <- character()
   if(mymodel[3] != "avoid"){
     materialStart=list(sib=c(materialNameColumnName),prt=c(femaleMaterialNameColumnName,maleMaterialNameColumnName))
@@ -27,7 +27,7 @@ geneticFormulation <- function(mymodel,noFa=c(1,1),overlayColumnName="half", mat
     pedigreeEnd[["na"]] <- ""
     
     geneticFormulaBase <- expand.grid(interactionsStart[[mymodel[1]]], materialStart[[mymodel[2]]])
-    geneticFormulaBase$Var3 <- cgiarBase::replaceValues(geneticFormulaBase$Var1,Search = c("rr(","diag(",materialStart[[mymodel[2]]]),Replace=c(paste0(",",noFa[1]),"",rep("",length(materialStart[[mymodel[2]]]))))
+    geneticFormulaBase$Var3 <- replaceValues(geneticFormulaBase$Var1,Search = c("rr(","diag(",materialStart[[mymodel[2]]]),Replace=c(paste0(",",noFa[1]),"",rep("",length(materialStart[[mymodel[2]]]))))
     geneticFormulaBase <- data.frame(V1=geneticFormulaBase[,1],
                                      V2="field_book_id", 
                                      V3=geneticFormulaBase$Var3,
@@ -74,7 +74,7 @@ geneticFormulation <- function(mymodel,noFa=c(1,1),overlayColumnName="half", mat
     pedigreeEnd[["na"]] <- ""
     
     geneticFormulaBase <- expand.grid(interactionsStart[[mymodel[1]]], materialStart[[mymodel[2]]])
-    geneticFormulaBase$Var3 <- cgiarBase::replaceValues(geneticFormulaBase$Var1,Search = c("rr(","diag("),Replace=c(paste0(",",noFa[2]),""))
+    geneticFormulaBase$Var3 <- replaceValues(geneticFormulaBase$Var1,Search = c("rr(","diag("),Replace=c(paste0(",",noFa[2]),""))
     geneticFormulaBase <- data.frame(V1=geneticFormulaBase[,1],
                                      V2="field_book_id", 
                                      V3=geneticFormulaBase$Var3,

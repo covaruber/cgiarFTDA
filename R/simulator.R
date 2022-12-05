@@ -34,7 +34,7 @@ simulator <- function(fixed, data, cropName, percentNA=0.1){
             silent = TRUE)
   mfna <- try(model.frame(fixed, data = data, na.action = na.pass), 
               silent = TRUE)
-  if (class(mf) == "try-error") {
+  if (inherits(mf,"try-error")) {
     stop("Please provide the 'data' argument for your specified variables.\nYou may be specifying some variables in your model not present in your dataset.", 
          call. = FALSE)
   }
@@ -45,13 +45,13 @@ simulator <- function(fixed, data, cropName, percentNA=0.1){
   # 
   # mf[1:5,1:5]
   if(cropName == "Cotton") {
-    traitsMetadata <- cottonTraitsMetadata
+    traitsMetadata <- NULL
   } else if(cropName == "OSR") {
-    traitsMetadata <- osrTraitsMetadataEU
+    traitsMetadata <- NULL
   } else if(cropName == "Wheat") {
-    traitsMetadata <- wheatTraitsMetadata
+    traitsMetadata <- NULL
   } else if(cropName == "Soybean") {
-    traitsMetadata <- soybeanTraitsMetadata
+    traitsMetadata <- NULL
   }
   
   ## define the covariates

@@ -56,7 +56,8 @@ asremlFormula <- function(fixed, random, rcov, dat, minRandomLevels=NULL, minRes
             silent = TRUE)
   mfna <- try(model.frame(fixed, dat = dat, na.action = na.pass), 
               silent = TRUE)
-  if (class(mf) == "try-error") {
+  
+  if (inherits(mf,"try-error")) {
     stop("Please provide the 'dat' argument for your specified variables.\nYou may be specifying some variables in your model not present in your datset.", 
          call. = FALSE)
   }

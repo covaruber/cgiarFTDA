@@ -56,7 +56,7 @@ Gilmour, A.R., Cullis, B.R., and Verbyla, A.P. (1997). Accounting for Natural an
 
 }
 \seealso{
-\code{\link{mmec}}, \code{\link{spl2Db}}
+
 }
 \examples{
 ## ============================ ##
