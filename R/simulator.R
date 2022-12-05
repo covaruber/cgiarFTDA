@@ -5,7 +5,7 @@ simulator <- function(fixed, data, cropName, percentNA=0.1){
   # ------------------------------------------------------------------------- #
   if (missing(data)) {
     data <- environment(fixed)
-    data2 <- environment(random)
+    # data2 <- environment(random)
     nodata <- TRUE
   }else {
     nodata = FALSE
