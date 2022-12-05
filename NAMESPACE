@@ -13,4 +13,3 @@ export(geneticFormulation, asremlFormula, fillDesignSingle, simulator,
 ## full imports
 ###########
   import("plyr")
-  import("sommer")
