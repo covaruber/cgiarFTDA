@@ -1,6 +1,6 @@
 Package: cgiarFTDA
 Type: Package
-Title: Special functions for biometrics field trial data analysis
+Title: Special functions for biometrics field trial data analysis.
 Version: 1.0.1
 Date: 2022-09-09
 Author: Giovanny Covarrubias-Pazaran
